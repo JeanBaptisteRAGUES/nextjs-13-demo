@@ -1,5 +1,13 @@
 import React from 'react';
 import { Todo } from '../../../typing';
+import { notFound } from 'next/navigation';
+
+/*  Paramètre à true par défaut, pas besoin de le mettre (ici juste pour l'exemple)
+    Permet d'aller sur des pages qui n'ont pas été générées statiquement
+    Problème : on peut aller au délà des limites (>200), exemple : todos/6666
+    Solution : page 'notFound' de next/navigation
+*/
+export const dynamicParams = true;
 
 type PageProps = {
     params: {
@@ -20,6 +28,8 @@ const fetchTodo = async (todoId: string) => {
 
 async function TodoPage({params: {todoId}}: PageProps) {
     const todo = await fetchTodo(todoId);
+
+    if(!todo.id) return notFound();
 
     return (
         <div className="p-10 bg-yellow-200 border-2 shadow-lg">
