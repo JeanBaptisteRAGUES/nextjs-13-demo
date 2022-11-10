@@ -35,3 +35,16 @@ async function TodoPage({params: {todoId}}: PageProps) {
 }
 
 export default TodoPage;
+
+// generateStaticParams est un nom de fonction réservé
+export async function generateStaticParams() {
+    const res = await fetch('https://jsonplaceholder.typicode.com/todos/');
+    const todos: Todo[] = await res.json();
+
+    // On limite le nombre de pages pré-construites à 10 pour ne pas dépasser la limite de l'api
+    const trimmedTodos = todos.splice(0, 10);
+
+    return trimmedTodos.map(todo => ({
+        todoId: todo.id.toString(),
+    }));
+}
