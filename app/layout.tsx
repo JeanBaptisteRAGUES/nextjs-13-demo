@@ -11,7 +11,7 @@ export default function RootLayout({
       <head>
         <title>Jean-Baptiste Website</title>
       </head>
-      <body>
+      <body className=' overflow-y-hidden'>
         <Header />
         {children}
       </body>
