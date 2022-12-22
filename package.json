@@ -6,9 +6,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.3",
+    "apollo-server-micro": "^3.11.1",
+    "graphql": "^16.6.0",
+    "micro": "^9.4.1",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "stockfish": "^15.0.0"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

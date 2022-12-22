@@ -1,5 +1,7 @@
 import '../styles/globals.css';
 import Header from './Header';
+import { ApolloProvider } from "@apollo/client";
+import client from '../apollo-client';
 
 export default function RootLayout({
   children,
@@ -11,10 +13,12 @@ export default function RootLayout({
       <head>
         <title>Jean-Baptiste Website</title>
       </head>
-      <body className=' overflow-y-hidden'>
-        <Header />
-        {children}
-      </body>
+      {/* <ApolloProvider client={client}> */}
+        <body className=' overflow-y-hidden h-full'>
+          <Header />
+          {children}
+        </body>
+      {/* </ApolloProvider> */}
     </html>
   )
 }

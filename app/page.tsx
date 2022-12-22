@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
+import Gallery from './Gallery';
+import OpeningsTrainer from './chess/OpeningsTrainer';
 
 {/* <div className=' flex flex-col w-full h-full bg-red-300 justify-center content-center gap-5'>
       <h1 className=' w-fit bg-green-500'>Home Page</h1>
@@ -13,6 +15,7 @@ function Home() {
       <h1 className=' font-bold text-lg text-white'>Home Page</h1>
       <Link href='/todos' className=' text-cyan-400 font-semibold'>Todo List</Link>
       <Link href='/search' className=' text-cyan-400 font-semibold'>Search</Link>
+      <Link href='/chess' className=' text-cyan-400 font-semibold'>Chess</Link>
     </div>
   )
 }
